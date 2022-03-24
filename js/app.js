@@ -467,7 +467,7 @@
         }
         function functions_FLS(message) {
             setTimeout((() => {
-                if (window.FLS) console.log(message);
+                if (window.FLS) ;
             }), 0);
         }
         function uniqArray(array) {
@@ -1307,9 +1307,7 @@
                     const heroTitle = document.querySelector(".hero__title");
                     const heroLabel = document.querySelector(".hero__label");
                     heroTitle.classList.add("_active");
-                    setTimeout((() => {
-                        heroLabel.classList.add("_active");
-                    }), 300);
+                    heroLabel.classList.add("_active");
                 }), 3300);
             }
         };
@@ -1324,12 +1322,12 @@
         const heroText = document.querySelector(".hero__text");
         let heroOverlayAnim = new Choreographer({
             animations: [ {
-                range: [ 0, 850 ],
+                range: [ 0, 900 ],
                 selector: ".hero__overlay",
                 type: "scale",
                 style: "opacity",
                 from: 0,
-                to: .8
+                to: .9
             } ]
         });
         heroText.addEventListener("scroll", (() => {
@@ -1424,8 +1422,12 @@
             } ]
         });
         const screen_11Row_1 = document.querySelector(".screen-11__row_1");
-        const screen_11Row_1Top = screen_11Row_1.getBoundingClientRect().top + 8 * screen_11Row_1.offsetHeight;
-        const screen_11Row_1Bottom = screen_11Row_1Top + 12 * screen_11Row_1.offsetHeight;
+        let screen_11Row_1Top = screen_11Row_1.getBoundingClientRect().top + 8 * screen_11Row_1.offsetHeight;
+        let screen_11Row_1Bottom = screen_11Row_1Top + 12 * screen_11Row_1.offsetHeight;
+        if (window.innerHeight < 750) {
+            screen_11Row_1Top = screen_11Row_1.getBoundingClientRect().top + 5 * screen_11Row_1.offsetHeight;
+            screen_11Row_1Bottom = screen_11Row_1Top + 9 * screen_11Row_1.offsetHeight;
+        }
         let screen_11Row_1Anim = new Choreographer({
             animations: [ {
                 range: [ screen_11Row_1Top, screen_11Row_1Bottom ],
@@ -1438,8 +1440,12 @@
             } ]
         });
         const screen_11Row_2 = document.querySelector(".screen-11__row_2");
-        const screen_11Row_2Top = screen_11Row_2.getBoundingClientRect().top + 16 * screen_11Row_2.offsetHeight;
-        const screen_11Row_2Bottom = screen_11Row_2Top + 20 * screen_11Row_2.offsetHeight;
+        let screen_11Row_2Top = screen_11Row_2.getBoundingClientRect().top + 20 * screen_11Row_2.offsetHeight;
+        let screen_11Row_2Bottom = screen_11Row_2Top + 22 * screen_11Row_2.offsetHeight;
+        if (window.innerHeight < 750) {
+            screen_11Row_2Top = screen_11Row_2.getBoundingClientRect().top + 13 * screen_11Row_2.offsetHeight;
+            screen_11Row_2Bottom = screen_11Row_2Top + 15 * screen_11Row_2.offsetHeight;
+        }
         let screen_11Row_2Anim = new Choreographer({
             animations: [ {
                 range: [ screen_11Row_2Top, screen_11Row_2Bottom ],
@@ -1493,6 +1499,16 @@
             lax.addDriver("scrollY", (function() {
                 return window.scrollY;
             }));
+            lax.addElements(".screen-7__image img", {
+                scrollY: {
+                    scale: [ [ "elInY", "elOutY" ], [ 1, 1.3 ] ]
+                }
+            });
+            lax.addElements(".screen-8__bg img", {
+                scrollY: {
+                    scale: [ [ "elInY", "elOutY" ], [ 1, 1.3 ] ]
+                }
+            });
             lax.addElements(".screen-13__bg img", {
                 scrollY: {
                     scale: [ [ "elInY", "elCenterY" ], [ 1, 1.8 ] ]
