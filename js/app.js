@@ -1495,7 +1495,7 @@
             }));
             lax.addElements(".screen-13__bg img", {
                 scrollY: {
-                    scale: [ [ "elInY", "elOutY" ], [ 1, 1.8 ] ]
+                    scale: [ [ "elInY", "elCenterY" ], [ 1, 1.8 ] ]
                 }
             });
         };
