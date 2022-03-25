@@ -1006,16 +1006,10 @@ body {
   padding-bottom: 2.5rem;
 }
 
-.screen-7__image {
+.screen-7__image-ibg {
   text-align: center;
+  padding-bottom: 41.6666666667%;
   overflow: hidden;
-}
-
-.screen-7__image img {
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .screen-8 {
@@ -1023,15 +1017,15 @@ body {
   min-height: 150vh;
 }
 
-@supports (margin-bottom: clamp( 3.75rem , 1.25rem  +  5.2083333333vw , 7.5rem )) {
+@supports (margin-bottom: clamp( 0.0000000625rem , -4.9999998958rem  +  10.4166665799vw , 7.5rem )) {
   .screen-8 {
-    margin-bottom: clamp( 3.75rem , 1.25rem  +  5.2083333333vw , 7.5rem );
+    margin-bottom: clamp( 0.0000000625rem , -4.9999998958rem  +  10.4166665799vw , 7.5rem );
   }
 }
 
-@supports not (margin-bottom: clamp( 3.75rem , 1.25rem  +  5.2083333333vw , 7.5rem )) {
+@supports not (margin-bottom: clamp( 0.0000000625rem , -4.9999998958rem  +  10.4166665799vw , 7.5rem )) {
   .screen-8 {
-    margin-bottom: calc(3.75rem + 3.75 * (100vw - 48rem) / 72);
+    margin-bottom: calc(0.0000000625rem + 7.4999999375 * (100vw - 48rem) / 72);
   }
 }
 
@@ -1572,6 +1566,16 @@ body {
     -ms-grid-columns: 45.3125% 1fr;
     grid-template-columns: 45.3125% 1fr;
     gap: 1.875rem;
+  }
+}
+
+@media (max-width: 85em) {
+  .screen-8 {
+    margin-bottom: 0 !important;
+  }
+
+  .screen-9 {
+    margin-bottom: 0 !important;
   }
 }
 
